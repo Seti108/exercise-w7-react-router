@@ -12,12 +12,14 @@ function ImagePage({ images }) {
   const image = images.find((image) => {
     console.log(image.id);
     console.log(imageParams.id);
-    return image.id == imageParams;
+    return image.id == imageParams.id;
   });
   console.log(image);
   return (
     <>
-      <main>{/* <img src={image.src.medium} alt="" /> */}</main>
+      <main>
+        <img src={image.src.medium} alt="" />
+      </main>
     </>
   );
 }
