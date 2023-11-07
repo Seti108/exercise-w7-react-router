@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function SearchBar({ setSearchQuery }) {
   let inputValue;
@@ -13,6 +14,7 @@ export default function SearchBar({ setSearchQuery }) {
   return (
     <form>
       <input type="text" onChange={handleInput} value={inputValue} />
+
       <button onClick={sendQuery} type="submit">
         Search
       </button>

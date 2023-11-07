@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Home from "./pages/Home";
 import ImagePage from "./pages/imagePage";
-import NavBar from "./components/NavBar";
+// import NavBar from "./components/NavBar";
+import { apiKey } from "./apikey";
 
 const App = () => {
-  const apiKey = "HNlWrNyrM3j4grG8blmoPR5CSzydQJhf6MlziFMRSxpluVir4aRe8eZD";
   const searchUrl = "https://api.pexels.com/v1/search"; //`https://api.pexels.com/v1/search?query=${initQuery}&per_page=12`;
   // let initQuery = "?query=lion&per_page=64";
   //State
@@ -29,7 +29,7 @@ const App = () => {
         if (data) {
           setImages(data.photos);
         } else {
-          throw new Error("Could't contact the API");
+          throw new Error("Couldn't contact the API");
         }
       })
       .catch((err) => {
@@ -39,27 +39,27 @@ const App = () => {
   };
 
   // useEffect to get an initial API call
-  useEffect(() => {
-    fetchImages(searchQuery);
-  }, []);
 
   useEffect(() => {
     fetchImages(searchQuery);
   }, [searchQuery]);
+
   return (
     <>
       <BrowserRouter>
-        <NavBar setSearchQuery={setSearchQuery} />
-        <main>
+        <>
           <Routes>
-            <Route path="/" element={<Home images={images} />} />
+            <Route
+              path="/"
+              element={<Home images={images} setSearchQuery={setSearchQuery} />}
+            />
             {/* Define your dynamic route here below */}
             <Route
               path="/image/:id"
               element={<ImagePage images={images} />}
             ></Route>
           </Routes>
-        </main>
+        </>
       </BrowserRouter>
     </>
   );

@@ -1,5 +1,6 @@
 // TODO: Import necessary modules and data
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // TODO: Destrcutrue props to receive information coming in from the parent comp
 function ImagePage({ images }) {
@@ -9,9 +10,15 @@ function ImagePage({ images }) {
   const image = images?.find((image) => {
     return parseInt(image.id) === parseInt(imageParams.id);
   });
+
+  // document.getElementsByClassName("main").style.background = image?.avg_color;
   return (
     <>
-      <main>
+      <main style={{ background: image.avg_color }}>
+        <Link to={"/"}>
+          {" "}
+          <button>Back</button>
+        </Link>
         <img loading="lazy" src={image.src.large} alt={image.alt} />
         <p>Photographer: {image.photographer}</p>
         <p>Description: {image.alt}</p>

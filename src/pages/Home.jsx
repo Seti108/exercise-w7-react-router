@@ -1,18 +1,22 @@
 // TODO: Import necessary modules and data
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import NavBar from "../components/NavBar";
 
-function Home({ images }) {
+function Home({ images, setSearchQuery }) {
   return (
-    <div className="imageFlex">
-      {images?.map(({ id, photographer, src }) => (
-        <div className="imageFlexDiv" key={id}>
-          <Link to={`/image/${id}`}>
-            <img loading="lazy" src={src.medium} alt="" />
-          </Link>
-        </div>
-      ))}
-    </div>
+    <>
+      <NavBar setSearchQuery={setSearchQuery} />
+      <div className="imageFlex">
+        {images?.map(({ id, src }) => (
+          <div className="imageFlexDiv" key={id}>
+            <Link to={`/image/${id}`}>
+              <img loading="lazy" src={src.landscape} alt="" />
+            </Link>
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
 

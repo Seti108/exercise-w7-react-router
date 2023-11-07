@@ -1,24 +1,14 @@
 #root {
   /* max-width: 1280px; */
   /* margin: 0 auto; */
-  padding: 2rem;
+  /* padding: 2rem; */
   min-height: 100vh;
   text-align: center;
 }
-
-.logo {
-  height: 2.5em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+main {
+  min-height: 100vh;
+  padding-top: 2rem;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
 li {
   text-align: left;
 }
@@ -62,18 +52,21 @@ a {
 .imageFlex {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: center; */
-  gap: 30px;
+  padding: 2rem;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .imageFlexDiv {
-  flex-basis: calc(33% - 30px);
+  position: relative;
+  flex-basis: calc(25% - 2rem);
+  height: 25vh;
+  /* max-width: 25vh; */
   /* background-color: lightgray; */
 }
 
 .imageFlexDiv img {
-  height: 25vh;
-  width: 100%;
+  height: 100%;
+  width: auto;
   object-fit: cover;
-  object-position: center;
 }
