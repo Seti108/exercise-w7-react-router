@@ -10,8 +10,6 @@ function ImagePage({ images }) {
   // console.log(images[0].id);
   console.log(imageParams.id);
   const image = images.find((image) => {
-    console.log(image.id);
-    console.log(imageParams.id);
     return image.id == imageParams.id;
   });
   console.log(image);
