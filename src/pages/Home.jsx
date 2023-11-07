@@ -2,25 +2,14 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function Home({ images, setImages }) {
-
-  // "https://api.pexels.com/v1/search?query=nature&per_page=1"
-  // TODO: Implement logic to display the list of songs
-
-  //
-
-  // useEffect(() => {
-  //   console.log(images);
-  // }, [images]);
-
+function Home({ images }) {
   return (
     <div className="imageFlex">
       {images?.map(({ id, photographer, src }) => (
-        <div key={id}>
+        <div className="imageFlexDiv" key={id}>
           <Link to={`/image/${id}`}>
-            <img src={src.medium} alt="" />
+            <img loading="lazy" src={src.medium} alt="" />
           </Link>
-          <p>{photographer}</p>
         </div>
       ))}
     </div>

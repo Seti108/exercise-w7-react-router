@@ -1,6 +1,6 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  /* max-width: 1280px; */
+  /* margin: 0 auto; */
   padding: 2rem;
   min-height: 100vh;
   text-align: center;
@@ -54,17 +54,26 @@ li {
   }
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+a {
+  display: inline-block;
+  width: 100%;
 }
 
 .imageFlex {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  /* justify-content: center; */
   gap: 30px;
+}
+
+.imageFlexDiv {
+  flex-basis: calc(33% - 30px);
+  /* background-color: lightgray; */
+}
+
+.imageFlexDiv img {
+  height: 25vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
