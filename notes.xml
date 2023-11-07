@@ -1,0 +1,26 @@
+## Image generator app
+
+### Navbar
+
+-- Home
+-- Search
+
+### Main app
+
+A grid of images fetched based on the search (3 columns)
+
+
+## Components
+
+Home
+
+Navbar
+
+-- Link back to Home
+-- Search bar
+
+PhotoPage
+
+-- Image itself
+-- Photographer
+-- Alt description

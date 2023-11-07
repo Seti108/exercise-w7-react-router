@@ -61,3 +61,10 @@ li {
 .read-the-docs {
   color: #888;
 }
+
+.imageFlex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
